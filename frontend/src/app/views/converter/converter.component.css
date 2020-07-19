@@ -17,6 +17,12 @@ button {
     border: 1px solid black;
 }
 
+.table thead {
+
+    background-color: #3F51B5;
+}
+
+
 .div {
     padding-left: 150px;
 }

@@ -12,11 +12,13 @@ export class ConverterComponent implements OnInit {
   textoJson: string = ""
   textoCsv: string = ""
   displayedColumns: Array<string>
-    
+  
 
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    let tabela = document.querySelector("table")
+    tabela.style.visibility = 'hidden'
   }
 
   validarJSON(): Boolean {
@@ -35,6 +37,9 @@ export class ConverterComponent implements OnInit {
     let validator: Boolean = this.validarJSON()
     
     if (validator) {
+
+      let tabela = document.querySelector("table")
+      tabela.style.visibility = 'visible'
 
       const objJSON: any = JSON.parse(this.textoJson)
       
@@ -112,6 +117,8 @@ export class ConverterComponent implements OnInit {
   }
 
   limpar(): void {
+    let tabela = document.querySelector("table")
+    tabela.style.visibility = 'hidden'
     this.textoJson = ""
     this.textoCsv = ""
     this.displayedColumns = []
