@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-title>JSON2CSV</mat-card-title>
+
+    <form>
+        <mat-form-field class="fieldj">
+            <textarea class="mat-elevation-z4" rows="22" cols="40" maxlength="500" matInput placeholder="JSON"
+                [(ngModel)]="textoJson" name="textoJson"></textarea>
+        </mat-form-field>
+        <mat-form-field class="fieldc">
+            <textarea class="mat-elevation-z4" rows="22" cols="40" maxlength="500" matInput placeholder="CSV"
+                [(ngModel)]="textoCsv" name="textoCsv"></textarea>
+        </mat-form-field>
+        <div class="div">
+            <table class="table mat-elevation-z4">
+                <thead>
+                    <tr>
+                        <th *ngFor="let column of displayedColumns">
+                            {{column}}
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </form>
+
+    <button mat-raised-button (click)="converterJson()" color="primary">
+        Converter
+    </button>
+    <button mat-raised-button (click)="limpar()">
+        Limpar
+    </button>
+</mat-card>
